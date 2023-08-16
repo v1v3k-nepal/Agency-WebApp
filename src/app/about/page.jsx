@@ -6,7 +6,7 @@ import Button from "@/components/button/Button";
 const About = () => {
   return (
     <div>
-      <div className="img-container h-[300px] w-full relative">
+      <div className="img-container h-[200px] md:h-[300px] w-full relative">
         <Image
           src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           fill={true}
@@ -18,8 +18,8 @@ const About = () => {
         <h2>Handcrafting Award winning digital experiences</h2>
         </div>
       </div>
-      <div className="flex gap-28 mt-5">
-        <div className="left basis-1/2">
+      <div className="flex gap-10 md:gap-28 mt-5 flex-col md:flex-row">
+        <div className="left basis-1/2 md:basis-full">
           <h1 className="font-bold text-2xl mb-6">Who We Are?</h1>
           <p className="text-justify mb-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat ullam commodi molestiae odit aliquam aut eligendi laudantium
@@ -31,7 +31,7 @@ const About = () => {
             blanditiis autem
           </p>
         </div>
-        <div className="right basis-1/2">
+        <div className="right basis-1/2 md:basis-full">
           <h1 className="font-bold text-2xl mb-6">What We Do ?</h1>
           <p className="text-justify">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, vitae sunt. Quisquam optio ea voluptates impedit laboriosam. Dicta eum ea
@@ -42,7 +42,9 @@ const About = () => {
             <p>- Fast And Handy</p>
             <p>- Mobile Apps</p>
           </div>
+          <div className="mb-5">
           <Button url="/" text="Contact"/>
+          </div>
         </div>
       </div>
     </div>
