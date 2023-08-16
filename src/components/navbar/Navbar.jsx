@@ -41,16 +41,16 @@ const Navbar = () => {
         },
     ]
   return (
-    <div className="flex justify-between h-24 items-center mx-[10%]">
-        <div className='cursor-pointer'>
-            Digital Nepal
+    <div className="flex justify-between h-24 items-center">
+        <div className='cursor-pointer font-bold text-2xl'>
+            <Link href="/">Digital Nepal</Link> 
         </div>
         <div className="flex gap-5">
             {links.map((link)=>(
             <Link href={link.url} key={link.id}>{link.title}</Link>
             ))}
+            <button className='bg-green-600 px-2 rounded-full'>Logout</button>
         </div>
-        
     </div>
   )
 }
