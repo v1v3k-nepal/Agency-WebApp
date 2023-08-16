@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <div className='flex justify-between flex-col md:flex-row'>
+    <div className='flex justify-between absolute bottom-2 w-[84%] flex-col md:flex-row'>
         <div className='text-xs'>©2023 Digital Nepal. All rights reserved.</div>
         <div className="flex gap-4 cursor-pointer">
             <Image src="./1.png" alt='facebook-icon' height={15} width={18}></Image>
