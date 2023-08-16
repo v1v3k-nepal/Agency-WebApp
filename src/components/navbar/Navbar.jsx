@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className='cursor-pointer font-bold text-2xl'>
             <Link href="/">Digital Nepal</Link> 
         </div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 flex-col md:flex-row">
             {links.map((link)=>(
             <Link href={link.url} key={link.id}>{link.title}</Link>
             ))}
