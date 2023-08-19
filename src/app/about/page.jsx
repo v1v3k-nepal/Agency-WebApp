@@ -10,12 +10,12 @@ const About = () => {
         <Image
           src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           fill={true}
-          className="grayscale object-cover"
+          className="grayscale object-cover rounded-sm"
           alt="About Image"
         />
-        <div className="bg-[#53c28b] absolute left-5 bottom-5 p-2 rounded-md">
-        <h1>Digital StoryTellers</h1>
-        <h2>Handcrafting Award winning digital experiences</h2>
+        <div className="bg-[#53c28b] absolute left-2 md:left-5  bottom-1 md:bottom-5  p-1 md:p-2 rounded-md">
+        <h1 className="text-[14px]">Digital StoryTellers</h1>
+        <h2 className="text-[12px]">Handcrafting Award winning digital experiences</h2>
         </div>
       </div>
       <div className="flex gap-10 md:gap-28 mt-5 flex-col md:flex-row">
