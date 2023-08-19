@@ -75,7 +75,7 @@ const Navbar = () => {
         <CgMenu size={20} className='md:hidden cursor-pointer' onClick={()=>openMenu()}/>
         <div className={`flex gap-5 flex-col md:flex-row fixed md:static top-0 -right-[350px] z-10 transition-all bg-gray-900 md:bg-transparent`} id='sidemenu'>
             {links.map((link)=>(
-            <Link href={link.url} key={link.id}>{link.title}</Link>
+            <Link href={link.url} key={link.id} className='text-white'>{link.title}</Link>
             ))}
             <button className='bg-green-600 px-2 rounded-full'>Logout</button>
             <AiFillCloseCircle size={25} className={`md:hidden cursor-pointer fixed top-10 right-5 ${isMenuOpen? "block":"hidden"}`} onClick={()=>closeMenu()}/>
