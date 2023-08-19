@@ -12,19 +12,19 @@ const Portfolio = () => {
       id: 1,
       image: Apps,
       title: "Applications",
-      url: "/portfolio/Applications",
+      url: "/portfolio/applications",
     },
     {
       id: 2,
       image: Illustration,
       title: "Illustrations",
-      url: "/portfolio/Illustrations",
+      url: "/portfolio/illustrations",
     },
     {
       id: 3,
       image: Websites,
       title: "Websites",
-      url: "/portfolio/Websites",
+      url: "/portfolio/websites",
     },
     {
       id: 4,

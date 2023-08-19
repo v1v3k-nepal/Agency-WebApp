@@ -1,5 +1,5 @@
 export const items = {
-    Applications: [
+    applications: [
       {
         id: 1,
         title: "Creative Portfolio",
@@ -22,7 +22,7 @@ export const items = {
           "https://gillde.com/wp-content/uploads/2022/07/image-1160x870.png",
       }
     ],
-    Illustrations: [
+    illustrations: [
       {
         id: 1,
         title: "Creative Portfolio",
@@ -45,7 +45,7 @@ export const items = {
           "https://img.freepik.com/premium-photo/party-with-friends-they-love-christmas-group-cheerful-young-people-carrying-sparklers-champagne-flutes-dancing-new-year-party-looking-happy-concepts-about-togetherness-lifestyle_146671-8737.jpg",
       }
     ],
-    Websites: [
+    websites: [
       {
         id: 1,
         title: "Creative Portfolio",
