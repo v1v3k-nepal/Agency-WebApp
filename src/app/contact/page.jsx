@@ -9,7 +9,7 @@ const Contact = () => {
       <h1 className="font-bold text-2xl md:text-4xl mb-5 text-center">Let&apos;s Keep in Touch</h1>
       <div className="flex flex-col md:flex-row justify-around items-center gap-5">
         <div className="img-container relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] md:w-[500px] md:h-[500px]">
-          <Image fill={true} src={ContactImg} alt="Contact image" className="object-cover"/>
+          <Image fill={true} src={ContactImg} alt="Contact image" className="object-cover animate-move"/>
         </div>
         <div className="form flex flex-col space-y-4 md:basis-1/2">
           <input className="p-2 rounded-md" type="text" placeholder="Enter Your Name" />
