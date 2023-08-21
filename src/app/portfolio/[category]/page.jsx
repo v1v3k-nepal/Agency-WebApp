@@ -1,15 +1,15 @@
 import React from 'react'
 import Image from 'next/image';
 import Button from '@/components/button/Button';
-import {items} from "./data"
+import {items} from "./data.js"
 import {notFound} from "next/navigation"
 
-const category = ({params}) => {
+const Category = ({params}) => {
   
   const getData = (cat)=>{
     const catData = items[cat];
     if(catData) return catData
-    else return notFound();
+    // else return notFound();
   }
 
   const data = getData(params.category)
@@ -36,4 +36,4 @@ const category = ({params}) => {
   )
 }
 
-export default category
+export default Category;
