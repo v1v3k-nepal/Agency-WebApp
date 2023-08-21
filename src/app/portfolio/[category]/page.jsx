@@ -1,17 +1,17 @@
-"use client"
 import React from 'react'
 import Image from 'next/image';
 import Button from '@/components/button/Button';
-import {items} from "../[category]/data"
+import {items} from "./data"
 import {notFound} from "next/navigation"
 
-const getData = (cat)=>{
-  const catData = items[cat];
-  if(catData) return catData
-  else return notFound();
-}
+const category = ({params}) => {
+  
+  const getData = (cat)=>{
+    const catData = items[cat];
+    if(catData) return catData
+    else return notFound();
+  }
 
-const Category = ({params}) => {
   const data = getData(params.category)
   // console.log(params);
   return (
@@ -36,4 +36,4 @@ const Category = ({params}) => {
   )
 }
 
-export default Category
+export default category
