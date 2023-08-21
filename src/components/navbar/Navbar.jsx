@@ -78,7 +78,7 @@ const Navbar = () => {
             <Link href={link.url} key={link.id} className='text-white'>{link.title}</Link>
             ))}
             <button className='bg-green-600 px-2 rounded-full'>Logout</button>
-            <AiFillCloseCircle size={25} className={`md:hidden cursor-pointer absolute top-10 right-5 ${isMenuOpen? "block":"hidden"}`} onClick={()=>closeMenu()}/>
+            <AiFillCloseCircle size={25} className={`md:hidden cursor-pointer text-white absolute top-10 right-5 ${isMenuOpen? "block":"hidden"}`} onClick={()=>closeMenu()}/>
         </div>
     </div>
   )
