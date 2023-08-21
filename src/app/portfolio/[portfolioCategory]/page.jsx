@@ -1,18 +1,18 @@
 import React from 'react'
 import Image from 'next/image';
 import Button from '@/components/button/Button';
-import {items} from "./data"
+import {dataCollection} from "./portfolioData"
 import {notFound} from "next/navigation"
 
-const Category = ({params}) => {
-  
-  const getData = (cat)=>{
-    const catData = items[cat];
-    if(catData) return catData
-    // else return notFound();
-  }
+const getData = (cat)=>{
+  const catData = dataCollection[cat];
+  if(catData) return catData
+  // else return notFound();
+}
 
-  const data = getData(params.category)
+const Category = ({params}) => {
+
+  const data = getData(params.portfolioCategory)
   // console.log(params);
   return (
     <div>
