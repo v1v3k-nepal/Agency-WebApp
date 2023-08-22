@@ -7,7 +7,7 @@ import {notFound} from "next/navigation"
 const getData = (cat)=>{
   const catData = dataCollection[cat];
   if(catData) return catData
-  // else return notFound();
+  else return notFound();
 }
 
 const Category = ({params}) => {
