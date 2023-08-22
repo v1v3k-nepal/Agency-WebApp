@@ -13,7 +13,7 @@ const About = () => {
           className="grayscale object-cover rounded-sm"
           alt="About Image"
         />
-        <div className="bg-[#53c28b] absolute left-2 md:left-5  bottom-1 md:bottom-5  p-1 md:p-2 rounded-md">
+        <div className="bg-[#6d4bd1] absolute left-2 md:left-5  bottom-1 md:bottom-5  p-1 md:p-2 rounded-md">
         <h1 className="text-[14px]">Digital StoryTellers</h1>
         <h2 className="text-[12px]">Handcrafting Award winning digital experiences</h2>
         </div>
