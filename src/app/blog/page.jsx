@@ -6,26 +6,29 @@ const Blog = () => {
   const data = [
     {
       id: 1,
+      link: "/blog/1",
       url: "https://img.freepik.com/free-vector/corporate-website-abstract-concept-illustration_335657-1831.jpg?w=2000",
     },
     {
       id: 2,
+      link: "/blog/2",
       url: "https://img.freepik.com/free-vector/digital-marketing-online-advertising-smm-app-notification-chatting-texting-viral-content-internet-meme-creation-mass-shared-content-concept_335657-1186.jpg?w=2000",
     },
-    { id: 3, url: "https://img.freepik.com/free-vector/website-creator-concept-illustration_114360-2766.jpg?w=2000" },
+    { id: 3, link: "/blog/3", url: "https://img.freepik.com/free-vector/website-creator-concept-illustration_114360-2766.jpg?w=2000" },
 
-    { id: 4, url: "https://images.template.net/78260/Free-Business-Website-Illustration-JPEG-1.jpg" },
+    { id: 4, link: "/blog/4", url: "https://images.template.net/78260/Free-Business-Website-Illustration-JPEG-1.jpg" },
     {
       id: 5,
+      link: "/blog/5",
       url: "https://img.freepik.com/free-vector/web-developers-courses-computer-programming-web-design-script-coding-study-computer-science-student-learning-interface-structure-components_335657-2542.jpg?w=2000",
     },
   ];
 
   return (
     <div>
-      <Link href="/">
-        {data.map((item) => (
-          <div className="flex items-center mb-10 flex-col lg:flex-row gap-10" key={item.id}>
+      {data.map((item) => (
+        <Link href={item.link} key={item.id}>
+          <div className="flex items-center mb-10 flex-col lg:flex-row gap-10">
             <div className="relative w-[85vw] h-[65vw] md:h-[330px] md:w-[500px]">
               <Image src={item.url} alt="blog image" fill={true} className="object-cover rounded-md"></Image>
             </div>
@@ -38,8 +41,8 @@ const Blog = () => {
               </p>
             </div>
           </div>
-        ))}
-      </Link>
+        </Link>
+      ))}
     </div>
   );
 };
