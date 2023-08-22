@@ -1,13 +1,15 @@
 "use client"
-import React, { useState } from 'react'
-// import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import React, { useContext, useState } from 'react'
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import Link from 'next/link';
 import {CgMenu} from "react-icons/cg"
 import {AiFillCloseCircle} from "react-icons/ai"
+import { ThemeContext } from '@/context/ThemeContext';
 
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const {mode} = useContext(ThemeContext)
 
     const openMenu = ()=>{
         toggleMenu();
@@ -73,12 +75,13 @@ const Navbar = () => {
             <Link href="/">Digital Nepal</Link> 
         </div>
         <CgMenu size={20} className='md:hidden cursor-pointer' onClick={()=>openMenu()}/>
-        <div className={`flex gap-5 flex-col md:flex-row fixed md:static top-0 -right-[350px] z-10 transition-all bg-gray-900 md:bg-transparent`} id='sidemenu'>
+        <div className={`flex gap-5 flex-col md:flex-row fixed md:static top-0 -right-[350px] z-10 transition-all ${mode}`} id='sidemenu'>
+            <DarkModeToggle/>
             {links.map((link)=>(
-            <Link href={link.url} key={link.id} className='text-white'>{link.title}</Link>
+            <Link href={link.url} key={link.id}>{link.title}</Link>
             ))}
-            <button className='bg-[#6d4bd1] px-2 rounded-full'>Logout</button>
-            <AiFillCloseCircle size={25} className={`md:hidden cursor-pointer text-white absolute top-10 right-5 ${isMenuOpen? "block":"hidden"}`} onClick={()=>closeMenu()}/>
+            <button className='bg-[#6d4bd1] px-3 rounded-full text-white'>Logout</button>
+            <AiFillCloseCircle size={25} className={`md:hidden cursor-pointer ${mode} text-white absolute top-10 right-5 ${isMenuOpen? "block":"hidden"}`} onClick={()=>closeMenu()}/>
         </div>
     </div>
   )

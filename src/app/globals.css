@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.light {
+  background-color: #fff;
+  color: #111;
+}
+
+.dark {
+  background-color: #111;
+  color: #fff;
+}
+
+.theme{
+  transition: all ease 1s;
+}
+
+.marginx{
+  padding: 0 8%;
+  min-height: 100vh;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -14,18 +38,5 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  /* color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
-    background: #000;
-    color: #fff;
-    margin: 0 8%;
 }
 

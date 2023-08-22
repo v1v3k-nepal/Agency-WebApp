@@ -3,7 +3,7 @@ import {FaFacebookSquare, FaInstagram, FaLinkedin, FaTwitterSquare, FaYoutubeSqu
 
 const Footer = () => {
   return (
-    <div className='flex gap-2 md:justify-between md:fixed bottom-2 md:w-[84%] flex-col items-center md:flex-row'>
+    <div className='flex gap-2 md:justify-between md:w-[84%] flex-col items-center md:flex-row md:fixed bottom-2'>
         <div className='text-sm'>©2023 Digital Nepal. All rights reserved.</div>
         <div className="flex gap-4 cursor-pointer">
             <FaFacebookSquare size={20}/>

@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import Image from "next/image";
 import Button from "@/components/button/Button";
+import Footer from "@/components/footer/Footer";
 
 const About = () => {
   return (
@@ -13,14 +14,14 @@ const About = () => {
           className="grayscale object-cover rounded-sm"
           alt="About Image"
         />
-        <div className="bg-[#6d4bd1] absolute left-2 md:left-5  bottom-1 md:bottom-5  p-1 md:p-2 rounded-md">
+        <div className="bg-[#6d4bd1] absolute left-2 md:left-5  bottom-1 md:bottom-5  p-1 md:p-2 rounded-md text-white">
         <h1 className="text-[14px]">Digital StoryTellers</h1>
         <h2 className="text-[12px]">Handcrafting Award winning digital experiences</h2>
         </div>
       </div>
       <div className="flex gap-10 md:gap-28 mt-5 flex-col md:flex-row">
         <div className="left basis-1/2 md:basis-full">
-          <h1 className="font-bold text-2xl mb-6">Who We Are?</h1>
+          <h1 className="font-bold text-2xl mb-4">Who We Are?</h1>
           <p className="text-justify mb-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat ullam commodi molestiae odit aliquam aut eligendi laudantium
             fuga nemo. Voluptate, perferendis aliquid, nobis earum beatae delectus voluptas iusto porro illum, Lorem ipsum, dolor sit amet consectetur
@@ -32,7 +33,7 @@ const About = () => {
           </p>
         </div>
         <div className="right basis-1/2 md:basis-full">
-          <h1 className="font-bold text-2xl mb-6">What We Do ?</h1>
+          <h1 className="font-bold text-2xl mb-4">What We Do ?</h1>
           <p className="text-justify">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae, vitae sunt. Quisquam optio ea voluptates impedit laboriosam. Dicta eum ea
             aut tenetur, dolorem ducimus quasi quisquam
@@ -47,6 +48,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

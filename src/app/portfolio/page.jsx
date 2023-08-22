@@ -5,6 +5,7 @@ import Illustration from "../../../public/illustration.png";
 import Websites from "../../../public/websites.jpg";
 import Apps from "../../../public/apps.jpg";
 import UI from "../../../public/UI.png";
+import Footer from "@/components/footer/Footer";
 
 const Portfolio = () => {
   const works = [
@@ -45,11 +46,12 @@ const Portfolio = () => {
               <div className="w-[300px] h-[400px] relative">
                 <Image src={item.image} alt="" fill={true} className="object-cover rounded-md border-4 border-gray-200" />
               </div>
-              <span className="absolute bottom-5 left-5 text-2xl font-bold group-hover:text-green-400">{item.title}</span>
+              <span className="absolute bottom-5 left-5 text-2xl text-white font-bold group-hover:text-green-400">{item.title}</span>
             </div>
           </Link>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };
