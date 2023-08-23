@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 import Button from '@/components/button/Button';
-import {dataCollection} from "./portfolioData"
+import {dataCollection} from "./data"
 import {notFound} from "next/navigation"
 
 const getData = (cat)=>{
@@ -12,7 +12,7 @@ const getData = (cat)=>{
 
 const Category = ({params}) => {
 
-  const data = getData(params.portfolioCategory)
+  const data = getData(params.category)
   // console.log(params);
   return (
     <div>
