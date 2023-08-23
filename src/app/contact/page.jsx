@@ -12,7 +12,7 @@ const Contact = () => {
         <div className="img-container relative w-[90vw] h-[90vw] md:w-[32vw] md:h-[33vw]">
           <Image fill={true} src={ContactImg} alt="Contact image" className="object-cover animate-move"/>
         </div>
-        <div className="form flex flex-col space-y-4 md:basis-1/2 px-5">
+        <div className="form flex flex-col space-y-4 md:basis-1/2 px-3">
           <input className="p-2 rounded-md bg-[#eeeaf3]" type="text" placeholder="Enter Your Name"/>
           <input className="p-2 rounded-md bg-[#eeeaf3]" type="email" placeholder="Enter Your Email" />
           <textarea className="p-2 rounded-md bg-[#eeeaf3]" name="message" cols="30" rows="9" placeholder="Enter Your Message"></textarea>
