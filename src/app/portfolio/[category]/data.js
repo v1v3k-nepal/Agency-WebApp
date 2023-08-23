@@ -1,4 +1,4 @@
-export const dataCollection = {
+export const Collection = {
     Applications: [
       {
         id: 1,

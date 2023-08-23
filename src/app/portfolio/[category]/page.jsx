@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image';
 import Button from '@/components/button/Button';
-import {dataCollection} from "./data"
+import {Collection} from "./data"
 import {notFound} from "next/navigation"
 
 const getData = (cat)=>{
-  const catData = dataCollection[cat];
+  const catData = Collection[cat];
   if(catData) return catData
-  // else return notFound();
+  else return notFound();
 }
 
 const Category = ({params}) => {
