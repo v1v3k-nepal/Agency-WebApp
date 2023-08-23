@@ -5,7 +5,7 @@ import Button from '@/components/button/Button';
 // import {notFound} from "next/navigation"
 
 const Collection = {
-  Applications: [
+  applications: [
     {
       id: 1,
       title: "Creative Portfolio",
@@ -102,7 +102,7 @@ const Collection = {
 const getData = (cat)=>{
   const catData = Collection[cat];
   if(catData) return catData
-  // else return notFound();
+  else return notFound();
 }
 
 const Category = ({params}) => {

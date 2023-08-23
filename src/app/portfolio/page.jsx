@@ -13,7 +13,7 @@ const Portfolio = () => {
       id: 1,
       image: Apps,
       title: "Applications",
-      url: "/portfolio/Applications",
+      url: "/portfolio/applications",
     },
     {
       id: 2,
