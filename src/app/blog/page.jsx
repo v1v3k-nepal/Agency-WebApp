@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 
 const getData = async () => {
   const response = await fetch(`${process.env.PROD_URL}/api/posts`, { cache: "no-store" });
-  if (!response.ok) return notFound();
+  if (!response.ok){
+    throw new Error("Failed to fetch Data")
+  }
   return response.json();
 };
 

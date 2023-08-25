@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import { NextResponse } from 'next/server'
 import { notFound } from 'next/navigation'
 
 const getData = async (id)=>{
