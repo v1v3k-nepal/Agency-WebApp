@@ -14,17 +14,18 @@ const Login = () => {
   useEffect(() => {
     setError(params.get("error"));
     setSuccess(params.get("success"));
-  }, [params]);
+    console.log(status)
+  }, [params,status]);
 
-  if (status == "loading") return <p>Loading</p>;
+  if (status === "loading") return <p>Loading</p>;
 
-  if (status == "authenticated") router?.push("/dashboard");
+  // if (status === "authenticated") router?.push("/dashboard");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
-    signIn("credentials", { email, password });
+    await signIn("credentials", { email, password });
   };
 
   return (
@@ -49,7 +50,7 @@ const Login = () => {
             Login
           </button>
         </div>
-        {error && <p>Something went wrong!!</p>}
+        {error && <p className="mx-auto text-red-500">{error}</p>}
       </form>
       <div className="w-full lg:w-[40%] mx-auto mt-5">
         <Link href="/dashboard/register">
