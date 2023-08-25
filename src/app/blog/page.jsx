@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 const getData = async () => {
-  const response = await fetch(`${process.env.PROD_URL}/api/posts`, { cache: "no-store" });
+  const response = await fetch(`${process.env.DEV_URL}/api/posts`, { cache: "no-store" });
   if (!response.ok) return notFound();
   return response.json();
 };

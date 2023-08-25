@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 import { notFound } from 'next/navigation'
 
 const getData = async (id)=>{
-  const response = await fetch(`${process.env.PROD_URL}/api/posts/${id}`, {cache: 'no-store'})
+  const response = await fetch(`${process.env.DEV_URL}/api/posts/${id}`, {cache: 'no-store'})
   if(!response.ok) return notFound();
   return response.json();
 }

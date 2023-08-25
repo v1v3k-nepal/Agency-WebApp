@@ -16,10 +16,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    userpic:{
-      type: String,
-      required: true
-    }
   },
   { timestamps: true }
 );

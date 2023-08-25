@@ -2,8 +2,8 @@ import "./globals.css";
 import { Inter, Roboto, Poppins } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import ThemeProvider, { ThemeContext } from "@/context/ThemeContext";
-import { useContext } from "react";
+import ThemeProvider from "@/context/ThemeContext";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,11 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`inter.className`}>
-          <ThemeProvider>
+        <ThemeProvider>
+          <AuthProvider>
             <Navbar />
             {children}
             {/* <Footer /> */}
-          </ThemeProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
