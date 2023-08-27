@@ -4,6 +4,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import connect from "@/utils/db";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
+import { useRouter } from "next/navigation";
+
 
 const handler = NextAuth({
   providers: [
@@ -20,7 +22,7 @@ const handler = NextAuth({
           if (user) {
             const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
             if (isPasswordCorrect) {
-              return user
+              return (user)
             } else {
               throw new Error("Wrong Password !!")
             }

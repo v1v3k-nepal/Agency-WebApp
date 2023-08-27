@@ -19,7 +19,7 @@ const Login = () => {
 
   if (status === "loading") return <p>Loading</p>;
 
-  // if (status === "authenticated") router?.push("/dashboard");
+  if (status === "authenticated") router?.push("/dashboard");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
