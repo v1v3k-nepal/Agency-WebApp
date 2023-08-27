@@ -12,3 +12,14 @@ export const GET = async(request,{params})=>{
         throw new NextResponse("Error While Fetching Data", {status: 500})
     }
 }
+
+export const DELETE = async(request, {params})=>{
+    const {id} = params;
+    try{
+        await connect();
+        await Post.findByIdAndDelete(id);
+        return new NextResponse("Post has been deleted", {status: 200})
+    }catch(error){
+        return new NextResponse("Failed to delete post", {status: 500})
+    }
+}
