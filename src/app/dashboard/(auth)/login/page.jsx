@@ -27,7 +27,7 @@ const Login = () => {
     const password = e.target[1].value;
     await signIn("credentials", { email, password });
   };
-
+  if(status!== "authenticated")
   return (
     <div className="md:h-[calc(100vh-150px)] flex flex-col justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col gap-5 mx-auto border-2 border-[#9f90d8] p-2 rounded-xl w-full lg:w-[40%]">
