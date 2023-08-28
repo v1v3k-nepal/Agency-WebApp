@@ -21,15 +21,17 @@ const Dashboard = () => {
     const title = e.target[0].value;
     const desc = e.target[1].value;
     const img = e.target[2].value;
-    const content = e.target[3].value;
+    const authorImg = e.target[3].value;
+    const content = e.target[4].value;
     try{
-      await fetch("/api/posts",{
+      await fetch("/api/posts/userPosts",{
         method: "POST",
         body: JSON.stringify({
           title, 
           desc, 
           img, 
           content, 
+          userpic: authorImg,
           username : session?.user.name})
       })
       mutate();
@@ -58,7 +60,7 @@ const Dashboard = () => {
           {data ? (
             data?.map((post) => (
               <div className="flex items-center gap-8 mb-5 flex-col lg:flex-row" key={post._id}>
-                <div className="relative w-[80vw] h-[50vw] md:w-[20vw] md:h-[11vw]">
+                <div className="relative w-[80vw] h-[50vw] md:max-w-[15vw] md:h-[11vw]">
                   <Image src={post.img} alt="post image" fill={true} className="rounded-md object-cover"></Image>
                 </div>
                 <div className="md:pr-8 max-w-[80vw] lg:max-w-[20vw]">
@@ -81,12 +83,13 @@ const Dashboard = () => {
             <h1 className="mx-auto font-bold text-2xl">Add New Post</h1>
             <input type="text" placeholder="Title" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
             <input type="text" placeholder="Description" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
-            <input type="text" placeholder="Image Url" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
+            <input type="text" placeholder="Blog Image Url" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
+            <input type="text" placeholder="Author Image Url" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
             <textarea
               name="content"
               id="content"
               cols="30"
-              rows="10"
+              rows="8"
               placeholder="Blog Content"
               className="rounded-md p-2 text-black bg-[#eeeaf3]"></textarea>
             <button className="px-5 py-3 bg-[#6d4bd1] cursor-pointer rounded-md border-none w-full text-white font-semibold">

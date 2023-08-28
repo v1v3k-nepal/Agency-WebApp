@@ -24,6 +24,12 @@ const Blog = async () => {
             </div>
             <div className="md:basis-[55%] ml-auto">
               <h1 className="font-bold text-2xl max-w-[540px] mb-5">{item.title}</h1>
+              <div className='flex items-center gap-4'>
+                <div className='relative w-10 h-10'>
+                  <Image src={item.userpic} alt="author image"  fill={true} className='object-cover rounded-full'></Image>
+                </div>
+                <h1 className='font-bold text-xl'>{item.username}</h1>
+              </div>
               <p>{item.desc}</p>
             </div>
           </div>
