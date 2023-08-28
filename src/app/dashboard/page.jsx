@@ -10,7 +10,7 @@ const Dashboard = () => {
   const { data: session, status } = useSession();
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, error, isLoading, mutate } = useSWR(`/api/posts/userPosts`, fetcher);
+  const { data, error, isLoading, mutate } = useSWR(`/api/posts/userPosts?username=${session?.user.name}`, fetcher);
   console.log(data);
 
   if (status === "loading") return <p>Loading</p>;
@@ -23,14 +23,14 @@ const Dashboard = () => {
     const img = e.target[2].value;
     const content = e.target[3].value;
     try{
-      await fetch("/api/posts/userPosts",{
+      await fetch("/api/posts",{
         method: "POST",
         body: JSON.stringify({
           title, 
           desc, 
           img, 
           content, 
-          username : session.user.name})
+          username : session?.user.name})
       })
       mutate();
       e.target.reset();
@@ -77,7 +77,7 @@ const Dashboard = () => {
           )}
         </div>
         <div className="lg:ml-auto lg:basis-[45%] mb-8">
-          <form className="flex flex-col gap-5" onSubmit={() => handleSubmit()}>
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <h1 className="mx-auto font-bold text-2xl">Add New Post</h1>
             <input type="text" placeholder="Title" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
             <input type="text" placeholder="Description" className="p-2 rounded-md text-black bg-[#eeeaf3]" />
@@ -89,7 +89,7 @@ const Dashboard = () => {
               rows="10"
               placeholder="Blog Content"
               className="rounded-md p-2 text-black bg-[#eeeaf3]"></textarea>
-            <button className="px-5 py-3 bg-[#6d4bd1] cursor-pointer rounded-md border-none w-full text-white font-semibold" type="submit">
+            <button className="px-5 py-3 bg-[#6d4bd1] cursor-pointer rounded-md border-none w-full text-white font-semibold">
               Submit
             </button>
           </form>
