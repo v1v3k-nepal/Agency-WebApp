@@ -76,7 +76,7 @@ const Navbar = () => {
         <Link href="/">Digital Nepal</Link>
       </div>
       <CgMenu size={20} className="md:hidden cursor-pointer" onClick={() => openMenu()} />
-      <div className={`flex gap-5 flex-col md:flex-row fixed md:static top-0 -right-[350px] z-10 transition-all ${mode}`} id="sidemenu">
+      <div className={`flex gap-5 flex-col md:flex-row fixed md:static top-0 -right-[350px] z-10 theme ${mode}`} id="sidemenu">
         <DarkModeToggle />
         {links.map((link) => (
           <Link href={link.url} key={link.id}>

@@ -21,8 +21,11 @@ a {
   transition: all ease 1s;
 }
 
-.marginx{
+.padding-x{
   padding: 0 8%;
+}
+
+.min-height{
   min-height: 100vh;
 }
 

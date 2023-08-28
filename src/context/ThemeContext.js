@@ -14,7 +14,7 @@ const ThemeProvider = ({children}) => {
     const getMode = ()=>{ return mode};
   return (
     <ThemeContext.Provider value={{mode, toggle}}>
-        <div className={`theme ${mode} marginx`}>{children}</div>
+        <div className={`theme ${mode} padding-x min-height`}>{children}</div>
     </ThemeContext.Provider>
   )
 }
