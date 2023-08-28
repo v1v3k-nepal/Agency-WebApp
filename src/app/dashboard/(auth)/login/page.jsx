@@ -51,6 +51,7 @@ const Login = () => {
           </button>
         </div>
         {error && <p className="mx-auto text-red-500">{error}</p>}
+        {success && <p className="mx-auto text-green-500">{success}</p>}
       </form>
       <div className="w-full lg:w-[40%] mx-auto mt-5">
         <Link href="/dashboard/register">

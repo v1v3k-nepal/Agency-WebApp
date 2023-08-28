@@ -25,7 +25,7 @@ const Register = () => {
           password,
         }),
       });
-      response.status === 201 && router.push("/dashboard/login?success=Account has been created");
+      response.status === 201 && router.push("/dashboard/login?success=Account has been created !!");
     } catch (err) {
       setError(err);
       console.log(err);
