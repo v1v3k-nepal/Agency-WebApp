@@ -32,6 +32,7 @@ const Dashboard = () => {
           content, 
           username : session.user.name})
       })
+      mutate();
       e.target.reset();
     }catch(err){
       console.log(err);
@@ -43,6 +44,7 @@ const Dashboard = () => {
       await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
+      mutate();
     } catch (err) {
       console.log(err);
     }
