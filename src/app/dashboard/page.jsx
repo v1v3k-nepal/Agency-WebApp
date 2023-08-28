@@ -5,6 +5,8 @@ import Image from "next/image";
 import React from "react";
 import useSWR from "swr";
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -34,7 +36,7 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch("/api/posts/userPosts", {
+      const response =  await fetch("/api/posts/userPosts", {
         method: "POST",
         body: JSON.stringify({
           ...formdata,
@@ -43,17 +45,29 @@ const Dashboard = () => {
       });
       mutate();
       setFormdata(initialFormData);
+      if(response.status == 201){
+      toast.success("Post Has been created")
+      }else{
+        console.log(response)
+        toast.error("Failed to create post")
+      }
     } catch (err) {
+      toast.error("Failed to create post")
       console.log(err);
     }
   };
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`/api/posts/${id}`, {
+      const response = await fetch(`/api/posts/${id}`, {
         method: "DELETE",
       });
       mutate();
+      if(response.status == 200){
+        toast.success("Post Deleted Successfully")
+      }else{
+        toast.error("Failed to delete post")
+      }
     } catch (err) {
       console.log(err);
     }
@@ -80,7 +94,7 @@ const Dashboard = () => {
   const handleUpdate = async (e)=>{
     e.preventDefault();
     try { 
-      await fetch("/api/posts/userPosts", {
+      const response = await fetch("/api/posts/userPosts", {
         method: "PUT",
         body: JSON.stringify({
           ...formdata,
@@ -91,6 +105,11 @@ const Dashboard = () => {
       mutate();
       setFormdata(initialFormData);
       setIsEditing(false)
+      if(response.status == 200){
+        toast.success("Post Updated Successfully")
+      }else{
+        toast.error("Failed to Update Post")
+      }
     } catch (err) {
       console.log(err);
     }
@@ -174,6 +193,7 @@ const Dashboard = () => {
             </button>)}
           </form>
         </div>
+        <ToastContainer />
       </div>
     );
   }

@@ -36,7 +36,7 @@ export const PUT = async (request)=>{
     await connect();
     const updatedPost = await Post.findByIdAndUpdate(postId, {$set: body}, {new: true})
     if(updatedPost){
-      return new NextResponse("Post Has been updated successfully")
+      return new NextResponse("Post Has been updated successfully", {status: 200})
     } else {
       return new NextResponse("Post not found", { status: 404 });
     }
