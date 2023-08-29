@@ -181,7 +181,7 @@ const Dashboard = () => {
               id="content"
               cols="30"
               rows="8"
-              placeholder="Blog Content"
+              placeholder="Blog Content: Note: It might take 30 minutes to an hour for database changes to reflect in blog page due to Vercel's Cache Issue. However, database changes will immediately reflect in this page."
               name="content"
               value={formdata.content}
               onChange={handleInputChange}
