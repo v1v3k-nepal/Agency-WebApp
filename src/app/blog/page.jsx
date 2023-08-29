@@ -22,9 +22,9 @@ const Blog = async () => {
             <div className="relative w-[85vw] h-[65vw] md:h-[330px] md:w-[500px]">
               <Image src={item.img} alt="blog image" fill={true} className="object-cover rounded-md"></Image>
             </div>
-            <div className="md:basis-[55%] ml-auto">
+            <div className="md:basis-[55%] md:ml-auto mr-auto md:mr-0">
               <h1 className="font-bold text-2xl max-w-[540px] mb-5">{item.title}</h1>
-              <div className='flex items-center gap-4'>
+              <div className='flex items-center gap-4 mb-1'>
                 <div className='relative w-10 h-10'>
                   <Image src={item.userpic} alt="author image"  fill={true} className='object-cover rounded-full'></Image>
                 </div>
