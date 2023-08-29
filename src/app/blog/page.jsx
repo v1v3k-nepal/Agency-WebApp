@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const response = await fetch(`${process.env.DEV_URL}/api/posts`, { cache: "no-store" });
+  const response = await fetch(`${process.env.PROD_URL}/api/posts`, { cache: "no-store" });
   if (!response.ok){
     throw new Error("Failed to fetch Data")
   }
