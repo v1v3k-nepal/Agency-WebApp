@@ -21,6 +21,10 @@ a {
   transition: all ease 1s;
 }
 
+.theme-mobile{
+  transition: all ease 0.2s;
+}
+
 .padding-x{
   padding: 0 8%;
 }

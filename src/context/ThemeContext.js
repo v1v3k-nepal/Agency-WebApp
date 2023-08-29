@@ -14,7 +14,7 @@ const ThemeProvider = ({children}) => {
     const getMode = ()=>{ return mode};
   return (
     <ThemeContext.Provider value={{mode, toggle}}>
-        <div className={`theme ${mode} padding-x min-height`}>{children}</div>
+        <div className={`theme-mobile md:transition md:duration-1000 ${mode} padding-x min-height`}>{children}</div>
     </ThemeContext.Provider>
   )
 }
